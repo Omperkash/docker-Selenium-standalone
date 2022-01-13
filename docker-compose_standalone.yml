@@ -1,0 +1,19 @@
+version: "3"
+services:
+  chrome:
+    image: selenium/standalone-chrome:4.1.0
+    hostname: chrome
+    privileged: true
+    shm_size: 2gb
+    ports:   #  It is like array below are values
+      - "4441:4444"   #for Container and local or host, docker conatiner port is 4441
+      - "7900:7900"  # for VNC viewer
+  firefox:
+    image: selenium/standalone-firefox:4.1.0
+    hostname: chrome
+    privileged: true
+    shm_size: 2gb
+    ports:   #  It is like array below are values
+      - "4442:4444"   #docker Container port is 4442
+      - "7901:7900"  #  VNC viewer port number is 7901
+# left side port must be unique always
